@@ -13,8 +13,8 @@ public class Price {
     private Long id;
 
     @Positive
-    @Column(name = "price")
-    private Double price;
+    @Column(name = "amount")
+    private Double amount;
 
     @Column(name = "currency")
     private String currency;
@@ -31,12 +31,20 @@ public class Price {
         this.id = id;
     }
 
-    public Double getPrice() {
-        return price;
+    public Double getAmount() {
+        return amount;
     }
 
-    public void setPrice(Double price) {
-        this.price = price;
+    public void setAmount(Double amount) {
+        this.amount = amount;
+    }
+
+    public String getCurrency() {
+        return currency;
+    }
+
+    public void setCurrency(String currency) {
+        this.currency = currency;
     }
 
     public Program getProgram() {
@@ -45,14 +53,5 @@ public class Price {
 
     public void setProgram(Program program) {
         this.program = program;
-    }
-
-    @Override
-    public String toString() {
-        return "Price{" +
-                "id=" + id +
-                ", price=" + price +
-                ", program=" + program +
-                '}';
     }
 }

@@ -1,32 +1,12 @@
-package com.dorinagheorghe.sda.kindergarten.model;
+package com.dorinagheorghe.sda.kindergarten.service.dto;
 
-import javax.persistence.*;
+public class ProgramDTO {
 
-@Entity
-@Table(name = "program")
-public class Program {
-
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "id")
     private Long id;
 
-    @Column(name = "name")
     private String name;
 
-    @Column(name = "description")
     private String description;
-
-    @OneToOne(mappedBy = "program")
-    private Price price;
-
-    public Price getPrice() {
-        return price;
-    }
-
-    public void setPrice(Price price) {
-        this.price = price;
-    }
 
     public Long getId() {
         return id;
@@ -51,6 +31,4 @@ public class Program {
     public void setDescription(String description) {
         this.description = description;
     }
-
-
 }
